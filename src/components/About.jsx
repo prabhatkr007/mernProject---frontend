@@ -11,7 +11,7 @@ function About() {
 
   const veryPage = async () => {
   try{ 
-      const res = await fetch ('https://mernproject-backend.onrender.com/about',{
+      const res = await fetch ('/about',{
         method : "GET",
         headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
         credentials:"include"

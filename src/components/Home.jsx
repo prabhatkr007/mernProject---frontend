@@ -9,7 +9,7 @@ const Home = () => {
 
   const homePage = async () => {
   try{ 
-      const res = await fetch ('https://mernproject-backend.onrender.com/getdata',{
+      const res = await fetch ('/getdata',{
         method : "GET",
         headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
         

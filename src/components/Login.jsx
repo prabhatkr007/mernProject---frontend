@@ -16,7 +16,7 @@ function Login() {
       const loginUser = async (e) => {
         e.preventDefault();
 
-        const res = await fetch("https://mernproject-backend.onrender.com/signin",{
+        const res = await fetch("/signin",{
           method : "POST",
           headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
           body: JSON.stringify({email,password})
