@@ -11,7 +11,8 @@ const Home = () => {
   try{ 
       const res = await fetch ('/getdata',{
         method : "GET",
-        headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+        // headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json'},
         
       });
 

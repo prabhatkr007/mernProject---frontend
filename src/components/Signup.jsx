@@ -25,7 +25,8 @@ const PostData = async (e) => {
 
   const res = await fetch("/register",{
     method : "POST",
-    headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+    // headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+    headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({name, email, phone, work, password,cpassword})
   });
 
