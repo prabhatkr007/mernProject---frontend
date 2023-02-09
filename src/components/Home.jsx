@@ -9,15 +9,16 @@ const Home = () => {
 
   const homePage = async () => {
   try{ 
-      const res = await fetch ('/getdata',{
+      const res = await fetch ("/getdata",{
         method : "GET",
+        
         // headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
         headers: {'Content-Type': 'application/json'},
         
       });
 
     const data = await res.json();
-    console.log(data.status);
+    // console.log(data.status);
 
     setUserName(data.name);
     setShow(true);

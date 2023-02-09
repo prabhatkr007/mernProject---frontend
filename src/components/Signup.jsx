@@ -25,24 +25,25 @@ const PostData = async (e) => {
 
   const res = await fetch("/register",{
     method : "POST",
+    
     // headers: {"Content-Type": "application/json",
     // "Accept": "application/json"},
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({name, email, phone, work, password,cpassword})
   });
 
-    const data = await res.json();
-    console.log(data.status);
+    // const data = await res.json();
+    // console.log(data.status);
 
-    if(data.status === 400 || !data){
-      window.alert("Registration failed !");
-      console.log("Registration failed !");
-    }
-    else{
-      window.alert("Registration Successful !");
-      console.log("Registration Successful !");
-      navigate("/login");
-    }
+    // if(data.status === 400 || !data){
+    //   window.alert("Registration failed !");
+    //   console.log("Registration failed !");
+    // }
+    // else{
+    //   window.alert("Registration Successful !");
+    //   console.log("Registration Successful !");
+    //   navigate("/login");
+    // }
 }
   
 
