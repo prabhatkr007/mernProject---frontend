@@ -13,8 +13,8 @@ function About() {
   try{ 
       const res = await fetch ('/about',{
         method : "GET",
-        // headers: { Accept: 'application/json', 'Content-Type': 'application/json'},
-        headers: {'Content-Type': 'application/json'},
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json'},
+        // headers: {'Content-Type': 'application/json'},
         
       });
 

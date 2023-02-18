@@ -19,21 +19,22 @@ function Login() {
         const res = await fetch("/signin",{
           method : "POST",
          
-          headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
-          // headers: {'Content-Type': 'application/json'},
+          // headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+          headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({email,password})
         });
 
-        // const data = res.json();
+        const data = res.json();
+        console.log(data);
 
-        // if(res.status === 400 || !data){
-        //   window.alert("Invalid Credentials");
-        // }
-        // else{
-        //   // dispatch({type:"USER",payload:true});
-        //   window.alert("Login Successful");
+        if(res.status === 400 || !data){
+          window.alert("Invalid Credentials");
+        }
+        else{
+          // dispatch({type:"USER",payload:true});
+          window.alert("Login Successful");
           navigate("/"); 
-        // }
+        }
         
       } 
 
