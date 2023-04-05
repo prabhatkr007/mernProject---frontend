@@ -17,11 +17,10 @@ function Login() {
         e.preventDefault();
 
         try {
-          const res = await fetch("/signin",{
+          const res = await fetch("https://mernproject-backend.onrender.com/signin",{
             method: "POST",
-
             credentials: 'include',
-            mode:'cors',
+            
             headers: {
               "Content-Type": "application/json",
             },
