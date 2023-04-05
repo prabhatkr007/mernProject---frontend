@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React,{useEffect,useContext} from "react";
 import "../App.css";
 import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -9,6 +9,7 @@ import {UserContext} from "../App";
 
 function ColorSchemesExample() {
   // const {state, dispatch} = useContext(UserContext);
+
   
         return (
           <>

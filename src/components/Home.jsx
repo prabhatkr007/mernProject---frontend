@@ -1,19 +1,44 @@
 import React,{useEffect,useState} from 'react'
 
+
 const Home = () => {
 
   const [userName, setUserName] = useState('');
   const [show, setShow] = useState(false);
 
 
+  const hello = async () => {
 
-  const homePage = async () => {
-  try{ 
-      const res = await fetch ("/getdata",{
-        method : "GET",
         
-        headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
-        // headers: {'Content-Type': 'application/json'},
+    try{ 
+         const res = await fetch ('/hello',{
+          method : "GET",
+          headers: {'Accept': 'application/json', 'Content-Type': 'application/json',},
+          
+        });
+  
+      const data = await res.json();
+      console.log(data);
+  
+    } catch(err){
+        console.log(err);
+        
+    }
+  }
+  const homePage = async () => {
+     
+  try{ 
+
+  
+    const token = localStorage.getItem('jwt');
+    console.log(token);
+    const res = await fetch ("/getdata",{
+      method : "GET",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}` // include the JWT token in the Authorization header"
+      }
         
       });
 
@@ -31,11 +56,12 @@ const Home = () => {
 
   useEffect(() => {
     homePage();
+    hello();
   
     
   }, [])
   
-
+  
   return (
     <div className='home-page'>
       <div className='home-div'>

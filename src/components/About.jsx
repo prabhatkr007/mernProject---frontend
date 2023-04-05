@@ -4,17 +4,18 @@ import { useNavigate } from 'react-router-dom';
 
 function About() {
 
-
+  
   const navigate = useNavigate();
 
   const [userData, setUserData] = useState('');
 
   const veryPage = async () => {
   try{ 
+   
       const res = await fetch ('/about',{
         method : "GET",
         headers: { Accept: 'application/json', 'Content-Type': 'application/json'},
-        // headers: {'Content-Type': 'application/json'},
+        // 'Authorization': `Bearer `
         
       });
 
@@ -33,14 +34,16 @@ function About() {
   }
 
   }
+  
 
   useEffect(() => {
     veryPage();
   
     
   }, [])
+ 
   
-
+ 
 
   return (
     <>
