@@ -35,7 +35,10 @@ const PostData = async (e) => {
     const data = await res.json();
     console.log(data.status);
 
-    if(data.status === 400 || !data){
+    if(data.status === 422){
+      window.alert("Email already exists");
+    }
+    if(data.status === 500 || !data){
       window.alert("Registration failed !");
       console.log("Registration failed !");
     }

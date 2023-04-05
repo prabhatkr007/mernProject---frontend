@@ -27,7 +27,7 @@ function Login() {
         const data = res.json();
         console.log(data);
 
-        if(res.status === 400 || !data){
+        if(res.status === 401 || !data){
           window.alert("Invalid Credentials");
         }
         else{
