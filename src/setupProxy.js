@@ -1,12 +1,12 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
-// const proxy = {
-//     target: 'https://mernproject-backend.onrender.com',
-//     changeOrigin: true
-// }
 const proxy = {
-  target: 'http://127.0.0.1:4000',
-  changeOrigin: true
+    target: 'https://mernproject-backend.onrender.com',
+    changeOrigin: true
 }
+// const proxy = {
+//   target: 'http://127.0.0.1:4000',
+//   changeOrigin: true
+// }
 module.exports = function(app) {
   app.use(
     '/hello',
