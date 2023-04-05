@@ -11,7 +11,7 @@ const Home = () => {
 
         
     try{ 
-         const res = await fetch ('/hello',{
+         const res = await fetch ('https://mernproject-backend.onrender.com/hello',{
           method : "GET",
           headers: {'Accept': 'application/json', 'Content-Type': 'application/json',},
           
@@ -27,7 +27,7 @@ const Home = () => {
   }
   const homePage = async () => {
     try{ 
-        const res = await fetch ('/getdata',{
+        const res = await fetch ('https://mernproject-backend.onrender.com/getdata',{
           method : "GET",
           headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
           credentials: 'include'

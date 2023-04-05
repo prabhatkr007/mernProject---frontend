@@ -23,7 +23,7 @@ const PostData = async (e) => {
     e.preventDefault();
     const {name, email, phone, work, password,cpassword} = user;
 
-  const res = await fetch("/register",{
+  const res = await fetch("https://mernproject-backend.onrender.com/register",{
     method : "POST",
     
     // headers: {"Content-Type": "application/json",

@@ -16,28 +16,30 @@ function Login() {
       const loginUser = async (e) => {
         e.preventDefault();
 
-        const res = await fetch("/signin",{
-          method : "POST",
-          credentials: 'include',
-          // headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({email,password})
-        });
-
-        const data = res.json();
-        console.log(data);
-
-        if(res.status === 401 || !data){
-          window.alert("Invalid Credentials");
+        try {
+          const res = await fetch("https://mernproject-backend.onrender.com/signin",{
+            method: "POST",
+            credentials: 'include',
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({email, password}),
+          });
+      
+          const data = await res.json();
+          console.log(data);
+      
+          if(res.status === 401 || !data) {
+            window.alert("Invalid Credentials");
+          } else {
+            window.alert("Login Successful");
+            navigate("/");
+          }
+        } catch (err) {
+          console.error(err);
+          window.alert("Failed to fetch");
         }
-        else{
-          // dispatch({type:"USER",payload:true});
-          window.alert("Login Successful");
-          navigate("/"); 
-        }
-        
-      } 
-
+      };
 
   return (
     <>

@@ -9,7 +9,7 @@ const Logout = () => {
    
   const logoutpage = async () => {
     try{ 
-        const res = await fetch ('/logout',{
+        const res = await fetch ('https://mernproject-backend.onrender.com/logout',{
           method : "GET",
           // headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
           headers: {'Content-Type': 'application/json'},
