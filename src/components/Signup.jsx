@@ -23,31 +23,30 @@ const PostData = async (e) => {
     e.preventDefault();
     const {name, email, phone, work, password,cpassword} = user;
 
-  const res = await fetch("https://mernproject-backend.onrender.com/register",{
-    method : "POST",
-    
-    // headers: {"Content-Type": "application/json",
-    // "Accept": "application/json"},
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({name, email, phone, work, password,cpassword})
-  });
-
-    const data = await res.json();
-    console.log(data.status);
-
-    if(data.status === 422){
-      window.alert("Email already exists");
+    try {
+      const res = await fetch("https://mernproject-backend.onrender.com/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, work, password, cpassword }),
+      });
+  
+      const data = await res.json();
+  
+      if (data.status === 422) {
+        window.alert("Email already exists");
+      } else if (data.status === 500 || !data) {
+        window.alert("Registration failed !");
+        console.log("Registration failed !");
+      } else {
+        window.alert("Registration Successful !");
+        console.log("Registration Successful !");
+        navigate("/login");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      window.alert("Something went wrong!");
     }
-    if(data.status === 500 || !data){
-      window.alert("Registration failed !");
-      console.log("Registration failed !");
-    }
-    else{
-      window.alert("Registration Successful !");
-      console.log("Registration Successful !");
-      navigate("/login");
-    }
-}
+  };
   
 
 
