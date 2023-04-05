@@ -59,8 +59,8 @@ function About() {
       </div>
       <div className="col-md-6">
         <div className="profile-head">
-          <h5>{userData.name}</h5>
-          <h6>{userData.work}</h6>
+          <h1>{userData.name}</h1>
+          {/* <h6>{userData.work}</h6> */}
           <p className="proile-rating">
             RANKINGS : <span>8/10</span>
           </p>
@@ -134,14 +134,6 @@ function About() {
               </div>
               <div className="col-md-6">
                 <p> {userData._id}</p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-6">
-                <label>Name</label>
-              </div>
-              <div className="col-md-6">
-                <p>{userData.name}</p>
               </div>
             </div>
             <div className="row">
