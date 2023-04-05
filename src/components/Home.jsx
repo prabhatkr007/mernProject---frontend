@@ -30,6 +30,7 @@ const Home = () => {
         const res = await fetch ('/getdata',{
           method : "GET",
           headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+          credentials: 'include'
           
         });
   
