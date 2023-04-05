@@ -26,34 +26,24 @@ const Home = () => {
     }
   }
   const homePage = async () => {
-     
-  try{ 
-
+    try{ 
+        const res = await fetch ('/getdata',{
+          method : "GET",
+          headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+          
+        });
   
-    const token = localStorage.getItem('jwt');
-    console.log(token);
-    const res = await fetch ("/getdata",{
-      method : "GET",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}` // include the JWT token in the Authorization header"
-      }
+      const data = await res.json();
+      console.log(data);
+      setUserName(data.name);
+      setShow(true);
+  
+    } catch(err){
+        console.log(err);
         
-      });
-
-    const data = await res.json();
-    console.log(data.status);
-
-    setUserName(data.name);
-    setShow(true);
-
-  } catch(err){
-      console.log(err);
-      
+    }
   }
-}
-
+  
   useEffect(() => {
     homePage();
     hello();

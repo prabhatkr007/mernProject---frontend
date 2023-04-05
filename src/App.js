@@ -36,6 +36,7 @@ const App = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/logout" element={<Logout />} />
+      <Route render={() => <div>Not Found</div>} />
   
       <Route path="*" element={<Error />} />
       </Routes>
