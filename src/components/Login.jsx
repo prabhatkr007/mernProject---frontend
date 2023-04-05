@@ -17,8 +17,9 @@ function Login() {
         e.preventDefault();
 
         try {
-          const res = await fetch("https://mernproject-backend.onrender.com/signin",{
+          const res = await fetch("/signin",{
             method: "POST",
+            
             credentials: 'include',
             headers: {
               "Content-Type": "application/json",

@@ -24,7 +24,7 @@ const PostData = async (e) => {
     const {name, email, phone, work, password,cpassword} = user;
 
     try {
-      const res = await fetch("https://mernproject-backend.onrender.com/register", {
+      const res = await fetch("/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, work, password, cpassword }),
@@ -38,6 +38,7 @@ const PostData = async (e) => {
         window.alert("Registration failed !");
         console.log("Registration failed !");
       } else {
+        console.log(res.error);
         window.alert("Registration Successful !");
         console.log("Registration Successful !");
         navigate("/login");
