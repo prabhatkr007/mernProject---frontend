@@ -11,6 +11,7 @@ const Logout = () => {
     try{ 
         const res = await fetch ('https://mernproject-backend.onrender.com/logout',{
           method : "GET",
+          mode:'cors',
           // headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
           headers: {'Content-Type': 'application/json'},
           credentials:"include"

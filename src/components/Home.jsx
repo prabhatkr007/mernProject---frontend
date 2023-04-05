@@ -13,6 +13,7 @@ const Home = () => {
     try{ 
          const res = await fetch ('/hello',{
           method : "GET",
+          mode:'cors',
           headers: {'Accept': 'application/json', 'Content-Type': 'application/json',},
           
         });
@@ -29,6 +30,7 @@ const Home = () => {
     try{ 
         const res = await fetch ('/getdata',{
           method : "GET",
+          mode:'cors',
           headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
           credentials: 'include'
           

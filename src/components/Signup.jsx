@@ -26,6 +26,7 @@ const PostData = async (e) => {
     try {
       const res = await fetch("/register", {
         method: "POST",
+        mode:'cors',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, work, password, cpassword }),
       });

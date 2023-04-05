@@ -19,8 +19,9 @@ function Login() {
         try {
           const res = await fetch("/signin",{
             method: "POST",
-            
+
             credentials: 'include',
+            mode:'cors',
             headers: {
               "Content-Type": "application/json",
             },
