@@ -76,7 +76,7 @@ function Contact() {
                 <input
                   type="submit"
                   defaultValue="Send Message"
-                  className="btn btn-block btn-primary rounded-0 py-2 px-4"
+                  className="btn btn-dark btn-lg btn-block"
                 />
                 <span className="submitting" />
               </div>

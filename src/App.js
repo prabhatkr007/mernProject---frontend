@@ -30,15 +30,15 @@ const App = () => {
   
     <Routes>
      
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/logout" element={<Logout />} />
-      <Route render={() => <div>Not Found</div>} />
+      <Route exact path="/" element={<Home />} />
+      <Route exact path="/about" element={<About />} />
+      <Route exact path="/contact" element={<Contact />} />
+      <Route exact path="/login" element={<Login />} />
+      <Route exact path="/signup" element={<Signup />} />
+      <Route exact path="/logout" element={<Logout />} />
+      <Route render={<Error />} />
   
-      <Route path="*" element={<Error />} />
+      <Route exact path="*" element={<Error />} />
       </Routes>
       
       
