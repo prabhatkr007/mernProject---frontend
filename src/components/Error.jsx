@@ -16,11 +16,11 @@ function Error() {
       <div className="pt-1 mb-4">
       <NavLink to="/">
       <button
-                      className="btn btn-dark btn-lg btn-block"
-                      type="button">
-                      Return Home
-                    </button>
-              </NavLink>
+        className="btn btn-dark btn-lg btn-block"
+        type="button">
+        Return Home
+      </button>
+    </NavLink>
                     
                   </div>
     </div>

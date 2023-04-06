@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import "./contacts.css";
 function Contact() {
   return (
@@ -73,11 +74,13 @@ function Contact() {
             </div>
             <div className="row justify-content-center">
               <div className="col-md-5 form-group text-center">
+              <NavLink to="/about/submit">
                 <input
                   type="submit"
                   defaultValue="Send Message"
                   className="btn btn-dark btn-lg btn-block"
                 />
+               </NavLink>
                 <span className="submitting" />
               </div>
             </div>
