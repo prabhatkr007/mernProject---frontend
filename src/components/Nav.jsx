@@ -24,6 +24,7 @@ function ColorSchemesExample() {
                   <NavLink className="nav-link"to="/">Home</NavLink>
                   <NavLink className="nav-link"to="/about">About</NavLink>
                   <NavLink className="nav-link"to="/contact">Contact</NavLink>
+                  <NavLink className="nav-link"to="/dev">Developer</NavLink>
                   <NavLink className="nav-link"to="/login">Signin</NavLink>
                   <NavLink className="nav-link"to="/signup">Registration</NavLink>
                   <NavLink className="nav-link"to="/logout">Logout</NavLink>

@@ -8,6 +8,7 @@ import Signup from './components/Signup';
 import Navbar from './components/Nav';
 import Error from './components/Error';
 import Logout from './components/Logout';
+import Dev from './components/Dev';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {Routes,Route} from "react-router-dom";
@@ -35,6 +36,7 @@ const App = () => {
       <Route exact path="/contact" element={<Contact />} />
       <Route exact path="/login" element={<Login />} />
       <Route exact path="/signup" element={<Signup />} />
+      <Route exact path="/dev" element={<Dev />} />
       <Route exact path="/logout" element={<Logout />} />
       {/* <Route render={<Error />} /> */}
       
