@@ -36,9 +36,9 @@ const App = () => {
       <Route exact path="/login" element={<Login />} />
       <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/logout" element={<Logout />} />
-      <Route render={<Error />} />
-  
-      <Route exact path="*" element={<Error />} />
+      {/* <Route render={<Error />} /> */}
+      
+      <Route path="/*" element={<Error />} />
       </Routes>
       
       
