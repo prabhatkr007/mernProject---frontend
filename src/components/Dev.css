@@ -1,38 +1,10 @@
-body{
-		background: linear-gradient(90deg, #e8e8e8 50%, #3d009e 50%);
-	}
-	.portfolio{
-		padding:6%;
-		text-align:center;
-	}
-	.heading{
-		background: #fff;
-		padding: 1%;
-		text-align: left;
-		box-shadow: 0px 0px 4px 0px #545b62;
-	}
-	.heading img{
-		width: 10%;
-	}
-	.bio-info{
-		padding: 5%;
-		background:#fff;
-		box-shadow: 0px 0px 4px 0px #b0b3b7;
-	}
-	.name{
-		font-family: 'Charmonman', cursive;
-		font-weight:600;
-	}
-	.bio-image{
-		text-align:center;
-	}
-	.bio-image img{
-		border-radius:50%;
-	}
-	.bio-content{
-		text-align:left;
-	}
-	.bio-content p{
-		font-weight:600;
-		font-size:30px;
+.gradient-custom {
+	/* fallback for old browsers */
+	background: #f6d365;
+	
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+	
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
 	}
