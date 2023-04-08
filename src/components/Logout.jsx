@@ -1,9 +1,11 @@
-import React ,{useContext, useEffect } from 'react'
+
+import React , {useContext, useEffect } from 'react'
 
 import { useNavigate } from 'react-router-dom';
 import {UserContext} from "../App";
 
 const Logout = () => {
+  const {dispatch} = useContext(UserContext);
   const navigate = useNavigate();
 
   const logoutpage = async () => {
@@ -14,7 +16,7 @@ const Logout = () => {
         headers: {'Content-Type': 'application/json'},
         credentials: "include"
       });
-
+      dispatch({type:"USER",payload:false})
       if (res.status !== 200) {
         const err = new Error(res.error);
         throw err;

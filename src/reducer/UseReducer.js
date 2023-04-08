@@ -1,4 +1,4 @@
-export const intialState = null;
+export const initialState = false;
 
 
 export const reducer = (state , action) => {

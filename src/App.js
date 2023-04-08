@@ -10,7 +10,7 @@ import Error from './components/Error';
 import Logout from './components/Logout';
 import Dev from './components/Dev';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import  {initialState, reducer} from "./reducer/UseReducer";
 import {Routes,Route} from "react-router-dom";
 import "./App.css";
 
@@ -22,13 +22,16 @@ export const UserContext = createContext();
 const App = () => {
   
 
-  // const [state, dispatch] = useReducer(reducer, intialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (<>
 
-      <Navbar />
+      
     
-  
+<UserContext.Provider value={{state, dispatch}}>
+
+    <Navbar />
+    
     <Routes>
      
       <Route exact path="/" element={<Home />} />
@@ -38,21 +41,11 @@ const App = () => {
       <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/dev" element={<Dev />} />
       <Route exact path="/logout" element={<Logout />} />
-      {/* <Route render={<Error />} /> */}
-      
       <Route path="/*" element={<Error />} />
-      </Routes>
-      
+    </Routes>
+</UserContext.Provider>
       
       </>)
-
-
-  
-  // {/* <UserContext.Provider value = {{state, dispatch}}>
-  //   <Navbar />
-  //   <Routing />
-  // </UserContext.Provider> */}
-
  
    
 

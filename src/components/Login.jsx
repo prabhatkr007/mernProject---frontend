@@ -1,10 +1,10 @@
 import React,{useContext, useState} from 'react'
 
 import { NavLink ,useNavigate } from 'react-router-dom';
-// import {UserContext} from "../App";
+import {UserContext} from "../App";
 
 function Login() {
-  // const {state, dispatch} = useContext(UserContext);
+  const {dispatch} = useContext(UserContext);
 
 
   const navigate = useNavigate();
@@ -33,6 +33,7 @@ function Login() {
           if(res.status === 401 || !data) {
             window.alert("Invalid Credentials");
           } else {
+            dispatch({type:"USER",payload:true})
             window.alert("Login Successful");
             navigate("/");
           }
