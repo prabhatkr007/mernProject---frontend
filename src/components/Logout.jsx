@@ -10,17 +10,19 @@ const Logout = () => {
 
   const logoutpage = async () => {
     try{ 
-      const res = await fetch ('https://mernproject-backend.onrender.com/logout', {
+      const res = await fetch ('https://mernproject-backend.onrender.com/signout', {
         method: "GET",
-        mode: 'cors',
-        headers: {'Content-Type': 'application/json'},
-        credentials: "include"
+        headers: {'Content-Type': 'application/json'}
       });
-      dispatch({type:"USER",payload:false})
-      if (res.status !== 200) {
+      if(res.status === 204){
+        dispatch({type:"USER",payload:false})
+      }
+     
+     else{
         const err = new Error(res.error);
         throw err;
-      }
+     } 
+    
     } catch (err){
       console.log(err);
     }
