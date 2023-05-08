@@ -12,9 +12,10 @@ const Logout = () => {
     try{ 
       const res = await fetch ('https://mernproject-backend.onrender.com/signout', {
         method: "GET",
+        credentials: 'include',
         headers: {'Content-Type': 'application/json'}
       });
-      if(res.status === 204){
+      if(res.status === 200){
         dispatch({type:"USER",payload:false})
       }
      
